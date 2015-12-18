@@ -1,0 +1,197 @@
+{
+  "version": 8,
+  "name": "Simple Test Filter",
+  "metadata": {
+    "mapbox:groups": {
+      "1450412054343.247": {
+        "name": "Lines"
+      }
+    }
+  },
+  "center": [
+    -149.91801723406988,
+    21.838573090645284
+  ],
+  "zoom": 5.758582918100363,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+
+      "maptest": {
+          "type": "geojson",
+          "data": "https://api.myjson.com/bins/56t69"
+        }
+    },
+  "layers": [
+      {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#f4efe8",
+        "background-opacity": 1
+      }
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "mapbox:group": "1450412054343.247"
+      },
+      "filter": [
+        "==",
+        "id",
+        13
+      ],
+      "type": "line",
+      "source": "maptest",
+      "id": "red",
+      "paint": {
+        "line-color": {
+          "base": 1,
+          "stops": [
+            [
+              0,
+              "rgba(255,0,0,1)"
+            ],
+            [
+              22,
+              "#000000"
+            ]
+          ]
+        }
+      },
+      "source-layer": "maptest"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "mapbox:group": "1450412054343.247"
+      },
+      "filter": [
+        "==",
+        "id",
+        14
+      ],
+      "type": "line",
+      "source": "maptest",
+      "id": "green",
+      "paint": {
+        "line-color": "#0f0"
+      },
+      "source-layer": "maptest"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "mapbox:group": "1450412054343.247"
+      },
+      "filter": [
+        "==",
+        "id",
+        12
+      ],
+      "type": "line",
+      "source": "maptest",
+      "id": "blue",
+      "paint": {
+        "line-color": {
+          "base": 1,
+          "stops": [
+            [
+              0,
+              "#00f"
+            ],
+            [
+              22,
+              "#000000"
+            ]
+          ]
+        }
+      },
+      "source-layer": "maptest"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "mapbox:group": "1450412054343.247"
+      },
+      "filter": [
+        "==",
+        "id",
+        11
+      ],
+      "type": "line",
+      "source": "maptest",
+      "id": "yellow",
+      "paint": {
+        "line-color": {
+          "base": 1,
+          "stops": [
+            [
+              0,
+              "#ff0"
+            ],
+            [
+              22,
+              "#000000"
+            ]
+          ]
+        }
+      },
+      "source-layer": "maptest"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "mapbox:group": "1450412054343.247"
+      },
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "id",
+          10
+        ]
+      ],
+      "type": "line",
+      "source": "maptest",
+      "id": "pink",
+      "paint": {
+        "line-color": {
+          "base": 1,
+          "stops": [
+            [
+              0,
+              "#f0f"
+            ],
+            [
+              22,
+              "#000000"
+            ]
+          ]
+        }
+      },
+      "source-layer": "maptest"
+    }
+  ],
+  "draft": false
+}

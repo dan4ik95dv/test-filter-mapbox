@@ -1,0 +1,50 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta charset='UTF-8'/>
+	<title>Mapbox GL JS test filter</title>
+	<link href='mapbox-gl.css' rel='stylesheet' />
+	<script src='mapbox-gl.js'></script>
+	<style>
+		body {
+			margin: 0;
+			padding: 0
+		}
+		#map {
+			position: absolute;
+			top: 0;
+			/*bottom: 50pt; */
+			bottom: 0;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+<div id='map'>
+</div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidW5pYmFzaWwiLCJhIjoicDA1T04zQSJ9.XzkGYdnhDYKX57tLbfNFTw';
+	var map = new mapboxgl.Map({
+		container: 'map',
+		center: [ -149.91801723406988, 21.838573090645284],
+		zoom: 10,
+		minZoom: 6,
+		maxZoom: 22,
+		style: 'test.json',
+		duration: 1000,
+		bearing: 0,
+		animate: true
+	});
+
+	map.addControl(new mapboxgl.Navigation());
+
+	map.on('click', function (e) {
+		var tooltip = new mapboxgl.Popup()
+				.setLngLat(e.lngLat)
+				.setHTML('<p>'+Math.round(e.lngLat.lng*1E6)/1E6+','+Math.round(e.lngLat.lat*1E6)/1E6+'</p>')
+				.addTo(map);
+	});
+
+</script>
+</body>
+</html>
